@@ -1,50 +1,89 @@
-# 📧 Smart Email Classifier
-
-This is a simple yet powerful web app I built that helps classify email messages into **Spam**, **Promotional**, or **Important**. It uses Google's Natural Language API to analyze the content and figure out what kind of email it is.
-
-🌐 [Live Demo Here](https://smart-email-classifier-8ce32.web.app)
+# 📧 Smart Email Classifier (GCP-Based)  
+An easy-to-understand, beginner-friendly web application that classifies emails as **Spam**, **Promotional**, or **Important** using Google Cloud Platform (GCP) services like Natural Language API, Cloud Functions, Firestore, and Firebase Hosting.
 
 ---
 
-## 🚀 What I Used
+## 🚀 Features  
 
-This project is fully built using Google Cloud and Firebase services. Here's what powers it:
-
-- 🔹 **Firebase Hosting** – To make the website live
-- 🔹 **Firebase Cloud Functions** – To handle the classification logic
-- 🔹 **Cloud Firestore** – To store the emails and their categories
-- 🔹 **Natural Language API** – To detect emotions or intent in the message
-- 🔹 **Chart.js** – To show a visual summary of classified emails
+📥 Paste email content on the website  
+⚙️ Triggers a Cloud Function to analyze content  
+🧠 Uses Google NLP to detect **sentiment** and **keywords**  
+🗂️ Classifies emails as Spam / Promotional / Important  
+📊 Stores results in Firestore and shows visual summary with Chart.js  
 
 ---
 
-## 💡 What It Does
+## 🔧 GCP Services Used  
 
-Here’s how it works:
-
-1. You paste an email message in the textbox.
-2. It sends that message to the backend using a Cloud Function.
-3. The backend uses the Natural Language API to figure out the **sentiment** (positive/negative).
-4. It also checks for common **keywords** like "offer", "win", "discount", etc.
-5. Based on the analysis, it classifies the email as:
-   - ✅ Important
-   - 🔶 Promotional
-   - 🚫 Spam
-6. Finally, it saves that result in Firestore and shows the outcome on the page (along with a chart that updates every time).
+| GCP Service               | Description                                                             |
+|---------------------------|-------------------------------------------------------------------------|
+| ☁️ Firebase Hosting        | Hosts the frontend (HTML + JS)                                          |
+| ⚙️ Cloud Functions         | Backend API to process email and perform sentiment + keyword analysis   |
+| 🧠 Natural Language API    | Detects sentiment score of the email                                    |
+| 📂 Cloud Firestore         | Stores classification result and user email input                      |
 
 ---
 
-## 🧪 Example Use
+## 📝 Submission Note  
 
-| Email Message                                 | What the App Says     |
-|----------------------------------------------|------------------------|
-| "Congratulations! You've won a gift card!"   | 🚫 Looks like Spam     |
-| "Limited-time 30% off sale just for you"     | 🔶 Promotional Offer   |
-| "Meeting rescheduled to 11:00 AM tomorrow"   | ✅ Important Message    |
+All services used in this project — **Hosting, Functions, Firestore, NLP API** — are implemented and tested.  
+Frontend is deployed and working live via Firebase Hosting.  
+GitHub contains the complete source code with configuration, function logic, and screenshots of successful classification and visualization.
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Setup Instructions  
 
-Here’s a quick overview of how my project files are set up:
+### 📌 Prerequisites  
 
+✅ Firebase CLI  
+✅ Node.js & npm  
+✅ GCP Billing enabled (free tier is enough)  
+
+---
+
+### 🔨 Clone the repository  
+
+```bash
+git clone https://github.com/nidhichougule/smart-email-classifier.git
+cd smart-email-classifier
+```
+
+---
+
+### 🔨 Deploy Firebase Services  
+
+```bash
+# Login and initialize Firebase
+firebase login
+firebase init
+
+# Deploy hosting and cloud function
+firebase deploy
+```
+
+---
+
+## 📂 Project Structure  
+
+```
+smart-email-classifier/
+├── public/
+│   ├── index.html          # Web interface for pasting emails
+│   └── main.js             # JS to call Cloud Function & draw Chart.js bar chart
+│
+├── functions/
+│   └── index.js            # Cloud Function to classify email using NLP API
+│
+├── firestore.rules         # Firestore access rules
+├── firebase.json           # Firebase deploy config
+├── .firebaserc             # Firebase project ID + alias
+└── README.md               # Project overview & setup
+```
+
+---
+
+## 🙋‍♀️ Made by  
+**Nidhi Chougule**  
+🎓 Electronics & Computer Science Student    
+📬 [nidhichougule20@gmail.com](mailto:nidhichougule20@gmail.com)
