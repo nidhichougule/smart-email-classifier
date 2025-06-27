@@ -30,6 +30,9 @@ All services used in this project — **Hosting, Functions, Firestore, NLP API**
 Frontend is deployed and working live via Firebase Hosting.  
 GitHub contains the complete source code with configuration, function logic, and screenshots of successful classification and visualization.
 
+🌐 **Live App:**  
+[https://smart-email-classifier-8ce32.web.app](https://smart-email-classifier-8ce32.web.app)
+
 ---
 
 ## 🛠️ Setup Instructions  
